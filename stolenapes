@@ -1,0 +1,17 @@
+ import requests
+ import json
+ 
+ 
+ def main(start, end):
+ for i in range(start, end):
+   url = "https://api.opensea.io/api/v]/asset/OxbckcaBeda7647aBab7c2061c2e118a18a936F13d/" + str(1)
+   response = json.loads(requests.request("6ET", url).text)
+   print(response)
+   img_data = requests.get(response[ 'image_original_url']).content
+   with open('./StolenApes/ape’ + str(1) + ‘.png’, 'wb') as handler:
+     handler.write(img_data)
+
+
+start = 5274
+end = 1000
+main(start,end)
